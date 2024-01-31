@@ -30,7 +30,6 @@ resource "aws_autoscaling_group" "staging" {
   desired_capacity          = 1
 }
 
-## Security Group for ELB
 resource "aws_security_group" "elb" {
   name   = "terraform-staging-elb"
   vpc_id = "${aws_vpc.mediaview_vpc.id}"
