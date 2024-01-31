@@ -1,4 +1,3 @@
-## Creating Launch Configuration
 resource "aws_launch_configuration" "staging" {
   image_id             = "ami-053c5d58cde670f97"
   name                 = "mediaview"
@@ -18,7 +17,6 @@ resource "aws_launch_configuration" "staging" {
   }
 }
 
-## Creating AutoScaling Group
 resource "aws_autoscaling_group" "staging" {
   name                      = "mediaview"
   launch_configuration      = "${aws_launch_configuration.staging.id}"
